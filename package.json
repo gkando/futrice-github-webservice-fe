@@ -1,0 +1,33 @@
+{
+  "name": "futrice-github-webservice-fe",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --env.MODE=production",
+    "start": "webpack-dev-server --env.MODE=development --host 0.0.0.0 --open",
+    "test": "node src/index.js"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.8.6",
+    "@babel/traverse": "^7.8.6",
+    "acorn": "^7.1.0",
+    "acorn-jsx": "^5.2.0",
+    "acorn-walk": "^7.1.1",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "esm": "^3.2.25",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

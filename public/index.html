@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <title>Git Dependencies</title>
+    <style>
+      body {
+        font-family: "Roboto";
+        font-size: 22px;
+      }
+
+      input[type="text"],
+      select {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 21px auto;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 50px;
+      }
+      label {
+        width: 50%;
+        font-size: 18px;
+        margin: auto;
+      }
+      .btn {
+        width: 50%;
+        margin: 0 auto;
+        border: none;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        /* display: inline-block; */
+        border-radius: 4px;
+        background-color: #01a8e2;
+        color: #fff;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding-top: 2.5rem;
+        margin: 0 auto;
+      }
+      .app-intro {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      #results {
+        padding-top: 30px;
+        width: 70%;
+        margin: auto;
+      }
+      th {
+        text-align: left;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #ddd;
+      }
+      a,
+      a:active {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Github Dependency Parser</h1>
+    <div class="app-intro">
+      <h3 align="center">Parse The Dependencies For Any Github Repo</h3>
+      <div class="form-group">
+        <label for="repo-url">Repo URL</label>
+        <input
+          type="text"
+          id="repo-url"
+          name="repo-url"
+          placeholder="github.com/user/repo"
+        />
+        <button class="btn">Go</button>
+      </div>
+    </div>
+    <div>
+      <table id="results">
+        <tbody id="results-body">
+          <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>Type</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
