@@ -2,7 +2,6 @@ import { App } from "./app";
 const fetch = require("node-fetch");
 
 export function WebService(args) {
-  this.foo = () => console.log("foo");
   const init = () => {
     // console.log(app);
     // const app = args;
@@ -43,10 +42,8 @@ export function WebService(args) {
       .then(result => {
         console.log(query);
         if (query.type == "file") {
-          console.log("RES:  ", result);
           app.updateDependencies(result, app.toggleLoader);
         } else {
-          console.log(result.contents);
           app.updatePage(result.contents, app.toggleLoader);
         }
       })

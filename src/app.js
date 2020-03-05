@@ -1,9 +1,7 @@
 import { WebService } from "./WebService";
-// const WebService = require("./webService");
 import dirIcon from "./dir.svg";
 import fileIcon from "./file.svg";
 
-// export function App() {
 export function App() {
   const init = () => {
     addListeners();
@@ -25,10 +23,6 @@ export function App() {
           query.type = e.target.dataset.type;
           api.post("/service/contents", query);
         }
-        // var query = document.getElementById("repo-url").value;
-        // api.post("/service/repo", query);
-        // console.log(e.target);
-        // return;
       }
       if (e.target.tagName == "INPUT") {
         console.log(e.target.value);
@@ -92,5 +86,3 @@ export function App() {
   const api = new WebService(this);
   init();
 }
-
-// export default App
