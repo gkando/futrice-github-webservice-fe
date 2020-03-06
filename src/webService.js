@@ -7,40 +7,36 @@ export function WebService(args) {
     // const app = args;
     return this;
   };
-  this.get = async endpoint => {
-    const url = `http://localhost:3300${endpoint}`;
-    fetch(url, {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        "accept-language": "en-US,en;q=0.9"
-      }
-    })
-      .then(r => r.json())
-      .then(result => {
-        console.log(result);
-      });
-  };
-  this.post = async (endpoint, query) => {
-    console.log(endpoint, query);
-    const url = `https://futrice-github-webservice.herokuapp.com${endpoint}`;
-    // const url = `http://localhost:3300${endpoint}`;
+  // this.get = async endpoint => {
+  //   const url = `http://localhost:3300${endpoint}`;
+  //   fetch(url, {
+  //     method: "GET",
+  //     headers: {
+  //       accept: "application/json",
+  //       "accept-language": "en-US,en;q=0.9"
+  //     }
+  //   })
+  //     .then(r => r.json())
+  //     .then(result => {
+  //       console.log(result);
+  //     });
+  // };
+  this.get = async (endpoint, query) => {
+    // const url = `https://futrice-github-webservice.herokuapp.com${endpoint}`;
+    let url = new URL(`http://localhost:3300${endpoint}`);
+    url.search = new URLSearchParams(query).toString();
     var req = {
       mode: "cors",
-      method: "POST",
+      method: "GET",
       headers: {
         Accept: "*/*",
         "Content-Type": "application/json",
         "accept-language": "en-US,en;q=0.9"
-      },
-      body: JSON.stringify({
-        ...query
-      })
+      }
     };
     fetch(url, req)
       .then(r => r.json())
       .then(result => {
-        console.log(query);
         if (query.type == "file") {
           app.updateDependencies(result, app.toggleLoader);
         } else {

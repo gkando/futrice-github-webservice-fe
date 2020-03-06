@@ -15,13 +15,13 @@ export function App() {
         if (e.target.dataset.type == "dir") {
           let query = {};
           query.url = e.target.dataset.url;
-          api.post("/service/repo", query);
+          api.get("/service/repo", query);
         }
         if (e.target.dataset.type == "file") {
           let query = {};
           query.url = e.target.dataset.url;
           query.type = e.target.dataset.type;
-          api.post("/service/contents", query);
+          api.get("/service/contents", query);
         }
       }
       if (e.target.tagName == "INPUT") {
@@ -31,7 +31,7 @@ export function App() {
         let query = {};
         query.url = document.getElementById("repo-url").value;
         console.log(query);
-        api.post("/service/repo", query);
+        api.get("/service/repo", query);
       }
     });
   };
