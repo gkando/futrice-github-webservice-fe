@@ -22,7 +22,9 @@ export function WebService(args) {
   //     });
   // };
   this.get = async (endpoint, query) => {
-    const url = `https://futrice-github-webservice.herokuapp.com${endpoint}`;
+    const url = new URL(
+      `https://futrice-github-webservice.herokuapp.com${endpoint}`
+    );
     // let url = new URL(`http://localhost:3300${endpoint}`);
     url.search = new URLSearchParams(query).toString();
     var req = {
